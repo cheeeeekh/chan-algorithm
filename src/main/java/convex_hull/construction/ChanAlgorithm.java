@@ -30,8 +30,8 @@ public class ChanAlgorithm {
     public List<Point> findConvexHull(List<Point> points) {
         resetIterationCount();
 
-        // Итеративный подбор m: 4, 16, 256, 65536, ...
-        for (int t = 1; t <= 20; t++) {
+        // Итеративный подбор m: 4, 16, 256, 65536
+        for (int t = 1; t <= 4; t++) {
             int m = (int) Math.min(Math.pow(2, Math.pow(2, t)), points.size());
 
             List<Point> hull = findConvexHullWithM(points, m);
